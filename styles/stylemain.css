@@ -1,0 +1,164 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+a{
+    position: relative;
+    background: #444;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    padding: 10px 30px;
+    transition: 0.5s;
+}
+a:hover{
+    letter-spacing: 0.25em;
+    background: var(--clr);
+    color: var(--clr);
+    box-shadow: 0 0 35px var(--clr);
+}
+a::before{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #27282c;
+}
+a span{
+    position: relative;
+    z-index: 1;
+}
+a i{
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+a i::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    left: 80%;
+    height: 5px;
+    top: -3.5px;
+    border: 2px solid var(--clr);
+    background: #27282c;
+    transform: translateX(-50%);
+    transition: 0.5s;
+}
+a:hover i::before{
+    width: 20px;
+    left: 20%;
+}
+a i::after{
+    content: '';
+    position: absolute;
+    width: 5px;
+    left: 20%;
+    height: 5px;
+    bottom: -3.5px;
+    border: 2px solid var(--clr);
+    transform: translateX(-50%);
+    background: #27282c;
+    transition: 0.5s;
+}
+a:hover i::after{
+    width: 20px;
+    left: 80%;
+}
+*/
+
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+    background: linear-gradient(120deg,#2980b9,#8e44ad);
+    height: 100vh;
+    overflow: hidden;
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;    
+}
+.center h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid black;
+}
+.center form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+form .field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+.field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+.field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .3s;
+}
+.field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #2691d9;
+    transition: .4s; 
+}
+.field input:focus ~ label,
+.field input:valid ~ label{
+    top: -5px;
+    color: #2691d9;
+}
+.field input:focus ~ span::before,
+.field input:valid ~ span::before{
+    width: 100%;
+}
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    transition: .5s;
+}
+input[type="submit"]:hover{
+    background: #e9f4fb;
+    color: #2691d9;
+    border-color: #2691d9;
+    transition: .5s;
+}
