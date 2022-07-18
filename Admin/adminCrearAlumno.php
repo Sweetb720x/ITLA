@@ -83,15 +83,19 @@
                 <span></span>
                 <label>Apellido</label>
             </div>
+                
                 <select class="select" name="carrera" id="carrera" required>
                 <option value="" disabled selected>Carrera</option>
-                <option value="1">Software</option>
-                <option value="2">Redes</option>
-                <option value="3">Multimedia</option>
-                <option value="4">Diseño</option>
-                <option value="5">Sonido</option>
-                <option value="6">Seguridad</option>
-                <option value="7">IoT</option>
+                <?php
+                    include('../conexion.php');
+                    
+                    $sql = $bd->prepare("SELECT Id, Tecnico FROM carreras;");
+                    $sql->execute();
+                    $data = $sql->fetchAll();
+                    foreach ($data as $valores):
+                        echo '<option value="'.$valores["Id"].'">'.$valores["Tecnico"].'</option>';
+                    endforeach;
+                    ?>
                 </select>
                 <br>
                 <button class="btnRegistrar">Registrar</button>

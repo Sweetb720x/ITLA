@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="../styles/styleadmin.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,9 +52,23 @@
             </h1>
             <div class="search-wrapper">
                 <span class="las la-search">
-                    <input type="search" placeholder="buscar">
+                    <input onkeyup="buscar_ahora($('#buscar').val());" type="text" id="buscar" name="buscar" placeholder="Buscar por docente">
                 </span>
             </div>
+            <script type="text/javascript">
+                function buscar_ahora(buscar){
+                    var parametros = {"buscar":buscar};
+                    $.ajax({
+                        data: parametros,
+                        type: "POST",
+                        url: "adminHorariosTable.php",
+                        success: function(data){
+                            document.getElementById("datos_buscador").innerHTML = data;
+                        }
+                    });
+                }
+                buscar_ahora();
+            </script>
                 <div class="user-wrapper">
                     <img src="../img/logoitla.JPG" alt="logo itla" width="60px" height="50px">
                     <div>
@@ -70,8 +85,8 @@
                     </div>
                 </div>     
         </header>
-    <main>
-        
-    </main>
+        <main>
+            <div id="datos_buscador"></div>
+        </main>
 </body>
 </html>

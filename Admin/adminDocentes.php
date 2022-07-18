@@ -87,7 +87,6 @@
         </header>
         <main>
                 <div id="datos_buscador"></div>
-
         </main>
     </div>
 </body>

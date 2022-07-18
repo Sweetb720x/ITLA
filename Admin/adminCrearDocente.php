@@ -68,7 +68,7 @@
             <section class="container_admin">
                 <img src="../img/logoitla.JPG" alt="logo itla" class="avatar">
                 <h2>RESGISTRO</h2>
-                <form action="adminAgregarDocente.php" method="post">
+                <form action="../Admin/adminAgregarDocente.php" method="post">
                     <div class="field">
                         <input type="text" name="nombre" id="nombre" required>
                         <span></span>
